@@ -27,6 +27,10 @@ create table Eventos(id_evento int auto_increment primary key,
                         SalaID int,
                         OrganizadorID int,
                         foreign key (OrganizadorID) references Usuarios(id_usuario));            -- Relacionar la columna OrganizadorID con la tabla Usuarios
+
+-- Añadir la columna ubicacion en la tabla 'eventos'
+alter table Eventos add descripcion varchar(50) NOT NULL;
+
 -- Crear la tabla Pagos
 CREATE TABLE Pagos (
     id_pago INT PRIMARY KEY,  -- ID único para el pago
