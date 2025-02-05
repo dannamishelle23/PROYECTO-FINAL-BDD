@@ -39,9 +39,8 @@ CREATE TABLE Pagos (
 -- Crear la tabla para reservas
 create table Reservas(id_reserva int auto_increment primary key,
                         evento_id int NOT NULL,    -- Clave foranea con la tabla Eventos
-                        asistente_id int NOT NULL,
+                        asistente_id int NOT NULL,   -- clave foranea con la tabla Usuarios
                         id_pago int NOT NULL,
-                        id_usuario int NOT NULL,
                         estado enum('Pendiente', 'Cancelado', 'Confirmado') NOT NULL,
                         fecha_reserva datetime,
     			FOREIGN KEY (evento_ID) REFERENCES Eventos(id_evento),
