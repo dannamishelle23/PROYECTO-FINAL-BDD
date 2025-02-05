@@ -1,5 +1,3 @@
--- ----------------------------------------------------------------------------------------
-
 -- Definición de las restricciones de integridad referencial (eliminación - update).
 
 -- 1. Usuarios - Eventos: ON DELETE SET NULL, ON UPDATE CASCADE
