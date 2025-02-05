@@ -14,6 +14,9 @@ create table Salas(id_sala int auto_increment primary key,
 						equipamiento varchar(50) NOT NULL,
                         disponibilidad ENUM('Si', 'No') NOT NULL);
 
+-- Añadir la columna ubicacion en la tabla 'salas'
+alter table Salas add ubicacion varchar(50) NOT NULL;
+
 -- Crear la tabla para Eventos
 create table Eventos(id_evento int auto_increment primary key,
 						nombre varchar(50) NOT NULL,
