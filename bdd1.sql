@@ -11,25 +11,22 @@ create table Usuarios(id_usuario int auto_increment primary key,
 create table Salas(id_sala int auto_increment primary key,
 						nombre_sala varchar(60) NOT NULL,
                         capacidad varchar(100) NOT NULL,
-						equipamiento varchar(50) NOT NULL,
-                        disponibilidad ENUM('Si', 'No') NOT NULL);
+			ubicacion varchar(50) NOT NULL,
+						equipamiento varchar(50) NOT NULL,       -- Describir los equipos con los que cuenta la sala, EJ: PROYECTORES
+                        disponibilidad ENUM('Si', 'No') NOT NULL);                       -- Verificar si la sala estará libre u ocupada
 
--- Añadir la columna ubicacion en la tabla 'salas'
-alter table Salas add ubicacion varchar(50) NOT NULL;
 
 -- Crear la tabla para Eventos
 create table Eventos(id_evento int auto_increment primary key,
-						nombre varchar(50) NOT NULL,
-                        fecha datetime NOT NULL,
+						nombre varchar(50) NOT NULL,       -- Nombre del evento
+			descripcion varchar(50) NOT NULL,                          -- Descripcion del evento
+                        fecha datetime NOT NULL,                                    -- Fecha en la que sera llevada a cabo el evento
 						hora_inicio time NOT NULL,
                         hora_fin time NOT NULL,
                         Estado enum('Pendiente', 'Cancelado', 'Confirmado') NOT NULL,
                         SalaID int,
                         OrganizadorID int,
                         foreign key (OrganizadorID) references Usuarios(id_usuario));            -- Relacionar la columna OrganizadorID con la tabla Usuarios
-
--- Añadir la columna ubicacion en la tabla 'eventos'
-alter table Eventos add descripcion varchar(50) NOT NULL;
 
 -- Crear la tabla Pagos
 CREATE TABLE Pagos (
